@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>One Last Question ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Poppins,sans-serif;
+}
+
+body{
+
+    background:linear-gradient(135deg,#4b0000,#b30000);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+.card{
+
+    background:white;
+
+    padding:50px;
+
+    width:90%;
+    max-width:600px;
+
+    border-radius:25px;
+
+    text-align:center;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.3);
+
+    animation:fade .8s;
+
+}
+
+@keyframes fade{
+
+from{
+
+opacity:0;
+
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+h1{
+
+    color:#ff4d88;
+
+    margin-bottom:20px;
+
+}
+
+p{
+
+    font-size:22px;
+
+    color:#444;
+
+    margin-bottom:40px;
+
+}
+
+.buttons{
+
+    position:relative;
+
+    height:80px;
+
+}
+
+button{
+
+    padding:15px 40px;
+
+    font-size:20px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#yes{
+
+    background:#ff4d88;
+
+    color:white;
+
+}
+
+#yes:hover{
+
+    transform:scale(1.08);
+
+}
+
+#no{
+
+    background:#888;
+
+    color:white;
+
+    position:absolute;
+
+    left:250px;
+
+}
+
+#result{
+
+    display:none;
+
+}
+
+#result h2{
+
+    color:#ff4d88;
+
+    margin-top:20px;
+
+}
+
+#result p{
+
+    font-size:20px;
+
+    line-height:1.8;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<div id="question">
+
+<h1>💌</h1>
+
+<p>
+
+Yannah...
+
+<br><br>
+
+Would you let me court you?
+
+</p>
+
+<div class="buttons">
+
+<button id="yes">
+
+YES ❤️
+
+</button>
+
+<button id="no">
+
+NO 😭
+
+</button>
+
+</div>
+
+</div>
+
+<div id="result">
+
+<h1>AAAAAA THANK YOU!! 😭❤️</h1>
+
+<h2>
+
+You just made me the happiest person today.
+
+</h2>
+
+<p>
+
+Thank you for giving me a chance.
+
+I promise to stay patient,
+
+be consistent,
+
+and make you feel appreciated every single day.
+
+❤️
+
+</p>
+
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+<script>
+
+const no=document.getElementById("no");
+
+no.addEventListener("mouseover",()=>{
+
+const x=Math.random()*(window.innerWidth-150);
+
+const y=Math.random()*(window.innerHeight-100);
+
+no.style.position="fixed";
+
+no.style.left=x+"px";
+
+no.style.top=y+"px";
+
+});
+
+document.getElementById("yes").onclick=function(){
+
+document.getElementById("question").style.display="none";
+
+document.getElementById("result").style.display="block";
+
+confetti({
+
+particleCount:250,
+
+spread:180,
+
+origin:{y:.6}
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
